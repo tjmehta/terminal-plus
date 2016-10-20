@@ -150,9 +150,8 @@ class Core
       @activeTerminal.getParentView().destroy()
     @activeTerminal = null
     activated = @activateAdjacentTerminal index
-    if (activated) {
+    if activated
       @toggle()
-    }
     activated
 
   newTerminalView: =>
