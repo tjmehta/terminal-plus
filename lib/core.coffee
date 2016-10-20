@@ -149,8 +149,11 @@ class Core
     else
       @activeTerminal.getParentView().destroy()
     @activeTerminal = null
-
-    @activateAdjacentTerminal index
+    activated = @activateAdjacentTerminal index
+    if (activated) {
+      @toggle()
+    }
+    activated
 
   newTerminalView: =>
     PanelView ?= require './panel-view'
